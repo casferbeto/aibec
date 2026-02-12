@@ -1,0 +1,50 @@
+.value-proposition {
+    background: radial-gradient(circle at center, #0a0c14 0%, #000000 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.vp-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vp-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(90deg, #fff, #a5b4fc, #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+}
+
+.vp-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@media (max-width: 768px) {
+    .vp-title {
+        font-size: 1.8rem;
+    }
+
+    .vp-text {
+        font-size: 1.1rem;
+    }
+}

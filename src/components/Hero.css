@@ -54,23 +54,22 @@
 
 /* Textos Estratégicos */
 .hero-text-content {
-    margin-top: -4rem;
-    /* Margen negativo agresivo para reducir gap visual con el logo */
-    max-width: 800px;
+    margin-top: -6rem;
+    /* Margen negativo aumentado para pegar más los textos al logo */
+    max-width: 900px;
+    /* Ligeramente más ancho para acomodar texto más grande */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     position: relative;
     z-index: 10;
-    /* Asegurar que esté por encima del área del logo si se solapa */
 }
 
 .hero-title {
-    font-size: 1.8rem;
-    /* Tamaño más sutil y sofisticado */
+    font-size: 2.35rem;
+    /* Aumentado 30% aprox (de 1.8rem) */
     font-weight: 700;
     letter-spacing: 0.3em;
-    /* Más aire entre letras para look técnico */
     color: #fff;
     margin-bottom: 1.5rem;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
@@ -83,13 +82,13 @@
 
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         flex-wrap: wrap;
         white-space: normal;
         letter-spacing: 0.1em;
@@ -97,26 +96,38 @@
 }
 
 .hero-description {
-    font-size: 1rem;
-    /* Pequeño y sutil */
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.6);
-    /* Más transparencia para no distraer */
+    font-size: 1.3rem;
+    /* Aumentado 30% (de 1rem) */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
-    max-width: 600px;
+    max-width: 750px;
+    /* Aumentado ancho para texto más grande */
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Botones */
 .hero-actions {
-    margin-top: 1.5rem;
-    /* Compactado para mantener cercanía con el texto */
+    margin-top: 2rem;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    /* Más separación para botones más grandes */
     justify-content: center;
     padding-bottom: 2rem;
     position: relative;
     z-index: 10;
+}
+
+/* Escalar botones */
+.hero-actions a,
+.hero-actions button {
+    font-size: 1.15rem !important;
+    /* Aumentar tamaño base texto */
+    padding: 1rem 2rem !important;
+    /* Aumentar padding */
+    transform: scale(1.1);
+    /* Ligero escalado adicional para impacto */
 }
 
 /* Noise premium */

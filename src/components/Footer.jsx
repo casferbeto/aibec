@@ -2,12 +2,14 @@ import React from 'react';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import './Footer.css';
 
+import logoImg from '../assets/brand/aibecsinfondologo.png';
+
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-logo">
-                    AIBEC<span className="dot">.</span>
+                    <img src={logoImg} alt="Aibec Logo" className="footer-logo-img" />
                 </div>
                 <div className="footer-links">
                     <a href="#" className="social-link"><Github size={20} /></a>

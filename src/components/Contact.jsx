@@ -7,18 +7,39 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '', // Added phone field
         message: ''
     });
+    const [status, setStatus] = useState({ type: '', message: '' });
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Simulate submission
-        alert('Mensaje enviado (simulación). ¡Gracias por contactarnos!');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus({ type: 'loading', message: 'Enviando...' });
+
+        try {
+            const response = await fetch('https://n8n.srv1208074.hstgr.cloud/webhook/bb4425b4-f540-4f6f-9520-b5a17bb10ffc', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus({ type: 'success', message: '¡Mensaje enviado con éxito!' });
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+            } else {
+                throw new Error('Error en el envío');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus({ type: 'error', message: 'Hubo un error al enviar tu mensaje. Por favor intenta de nuevo.' });
+        }
     };
 
     return (
@@ -43,17 +64,32 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <div className="form-group">
-                        <label htmlFor="name">Nombre</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            placeholder="Tu nombre"
-                        />
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label htmlFor="name">Nombre</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                                placeholder="Tu nombre"
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="phone">Celular</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                                placeholder="Tu número de celular"
+                            />
+                        </div>
                     </div>
 
                     <div className="form-group">
@@ -82,8 +118,16 @@ const Contact = () => {
                         ></textarea>
                     </div>
 
+                    {status.message && (
+                        <div className={`form-status ${status.type}`}>
+                            {status.message}
+                        </div>
+                    )}
+
                     <div className="form-submit">
-                        <Button variant="primary">Enviar Mensaje</Button>
+                        <Button variant="primary" type="submit" disabled={status.type === 'loading'}>
+                            {status.type === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
+                        </Button>
                     </div>
                 </motion.form>
             </div>

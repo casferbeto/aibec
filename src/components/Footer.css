@@ -15,11 +15,24 @@
 }
 
 .footer-logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo-img {
+    height: 250px;
+    /* Aumentado 4x+ (de 60px) según solicitud */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    /* Estilo sutil para footer */
+    transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
 }
 
 .footer-logo .dot {

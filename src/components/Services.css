@@ -1,7 +1,23 @@
 .services {
     padding: 8rem 2rem;
-    background: var(--bg-color);
+    background: #000000;
+    /* Fondo negro profundo para contraste */
     position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Glow superior para separación suave */
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+    /* Azul diferente al de Target (Indigo) */
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
 }
 
 .services-container {
