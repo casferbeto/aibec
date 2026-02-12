@@ -1,0 +1,81 @@
+import React from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import Button from './Button';
+import Starfield from './Starfield';
+import './Hero.css';
+
+const Hero = () => {
+    // Setup logic for 3D Tilt Effect on text
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // Calculate distance from center normalized (-1 to 1)
+        x.set((e.clientX - centerX) / (rect.width / 2));
+        y.set((e.clientY - centerY) / (rect.height / 2));
+    };
+
+    const resetMouse = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    // Map mouse position to rotation values
+    const rotateX = useTransform(y, [-1, 1], [15, -15]); // Invert Y for natural tilt
+    const rotateY = useTransform(x, [-1, 1], [-15, 15]);
+
+    return (
+        <section
+            className="hero"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetMouse}
+        >
+            <Starfield />
+            <div className="hero-content">
+                <motion.div
+                    style={{ rotateX, rotateY, perspective: 1000 }}
+                >
+                    <motion.h1
+                        className="hero-title"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        Diseño que <br />
+                        <span className="hero-gradient hero-title-3d">Desafía la Gravedad</span>
+                    </motion.h1>
+                </motion.div>
+
+                <motion.p
+                    className="hero-subtitle"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                >
+                    Creamos experiencias digitales extraordinarias que fusionan arte, tecnología y funcionalidad para elevar tu marca.
+                </motion.p>
+
+                <motion.div
+                    className="hero-actions"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                >
+                    <Button variant="primary">Explorar Servicios</Button>
+                    <Button variant="secondary">Ver Portafolio</Button>
+                </motion.div>
+            </div>
+
+            <div className="hero-background">
+                <div className="glow-orb orb-1"></div>
+                <div className="glow-orb orb-2"></div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;

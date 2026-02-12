@@ -1,0 +1,132 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircle, Zap, TrendingUp, Users, Database } from 'lucide-react';
+import './About.css';
+import ecosystemImg from '../assets/images/ecosystem.png';
+import profileImg from '../assets/images/profile.png'; // Will be created after generation
+
+const About = () => {
+    return (
+        <section className="about" id="about">
+            <div className="about-container">
+                {/* Intro Section */}
+                <div className="about-intro">
+                    <motion.div
+                        className="about-image-wrapper"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <img src={profileImg} alt="Alberto Castillo" className="about-profile-img" />
+                        <div className="about-blob"></div>
+                    </motion.div>
+
+                    <motion.div
+                        className="about-content"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="section-title">Alberto Castillo</h2>
+                        <h3 className="about-subtitle">Arquitecto Digital & Especialista en Automatización con IA</h3>
+                        <p className="about-text">
+                            Soy un profesional enfocado en el diseño y desarrollo de ecosistemas digitales inteligentes que integran páginas web estratégicas, e-commerce de alto rendimiento y automatización avanzada con Inteligencia Artificial.
+                        </p>
+                        <p className="about-text">
+                            No solo construyo sitios web: diseño plataformas completas orientadas a resultados, donde la tecnología, los datos y la automatización trabajan juntos para escalar negocios.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* Differentiators */}
+                <motion.div
+                    className="about-section"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h3 className="section-subtitle text-center">💡 ¿Qué hago diferente?</h3>
+                    <div className="differentiators-grid">
+                        {[
+                            "Diseño y desarrollo web con enfoque en conversión",
+                            "Tiendas e-commerce optimizadas para ventas reales",
+                            "Automatización de procesos con IA (n8n, APIs)",
+                            "Integración de bases de datos y dashboards",
+                            "Flujos automatizados para operaciones",
+                            "Asistentes inteligentes conectados a tus datos"
+                        ].map((item, i) => (
+                            <div key={i} className="diff-card">
+                                <CheckCircle className="diff-icon" size={24} />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="text-center highlight-text">
+                        Mi especialidad es convertir procesos manuales complejos en sistemas automatizados, eficientes y medibles.
+                    </p>
+                </motion.div>
+
+                {/* Strategic Approach */}
+                <motion.div
+                    className="about-section strategy-section"
+                    style={{ backgroundImage: `url(${ecosystemImg})` }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <div className="strategy-overlay"></div>
+                    <div className="strategy-content">
+                        <h3 className="section-subtitle text-center">🔥 Enfoque Estratégico</h3>
+                        <p className="text-center strategy-desc">
+                            Trabajo desde la arquitectura: Primero entiendo el modelo de negocio, luego diseño la estructura tecnológica correcta y finalmente implemento automatización e inteligencia.
+                        </p>
+
+                        <div className="impact-grid">
+                            {[
+                                { icon: <Zap />, text: "Información en tiempo real" },
+                                { icon: <CheckCircle />, text: "Reducción de errores operativos" },
+                                { icon: <TrendingUp />, text: "Ahorro de tiempo y costos" },
+                                { icon: <Database />, text: "Escalabilidad real" }
+                            ].map((impact, i) => (
+                                <div key={i} className="impact-item">
+                                    <div className="impact-icon-wrapper">{impact.icon}</div>
+                                    <span>{impact.text}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Ideal Client */}
+                <motion.div
+                    className="about-section ideal-client"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h3 className="section-subtitle text-center">🎯 Perfil Ideal de Cliente</h3>
+                    <div className="client-grid">
+                        <div className="client-card">
+                            <Users size={40} className="client-icon" />
+                            <h4>Empresas que buscan escalar</h4>
+                            <ul>
+                                <li>Profesionalizar su presencia digital</li>
+                                <li>Automatizar procesos internos</li>
+                                <li>Integrar IA en sus operaciones</li>
+                                <li>Tomar decisiones basadas en datos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+            </div>
+        </section>
+    );
+};
+
+export default About;
