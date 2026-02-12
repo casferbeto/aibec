@@ -14,7 +14,7 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Inicio', path: '/' },
         { name: 'Servicios', path: '/services' },
-        { name: 'Portafolio', path: '/portfolio' },
+        // { name: 'Portafolio', path: '/portfolio' }, // Hidden temporarily
         { name: 'Quiénes Somos', path: '/about' },
         { name: 'Contacto', path: '/contact' },
     ];
