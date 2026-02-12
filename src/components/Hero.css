@@ -54,12 +54,15 @@
 
 /* Textos Estratégicos */
 .hero-text-content {
-    margin-top: 1rem;
-    /* Reducido para acercar al logo */
+    margin-top: -4rem;
+    /* Margen negativo agresivo para reducir gap visual con el logo */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    position: relative;
+    z-index: 10;
+    /* Asegurar que esté por encima del área del logo si se solapa */
 }
 
 .hero-title {
@@ -106,12 +109,14 @@
 
 /* Botones */
 .hero-actions {
-    margin-top: 2.5rem;
-    /* Reducido para visibilidad */
+    margin-top: 1.5rem;
+    /* Compactado para mantener cercanía con el texto */
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     padding-bottom: 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 /* Noise premium */
