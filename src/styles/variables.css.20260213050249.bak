@@ -1,25 +1,24 @@
 :root {
   /* Colors - Dark Premium Theme */
-  --bg-color: #000000;
-  --bg-alt: #000000;
+  --bg-color: #050505;
+  --bg-alt: #0a0a0a;
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
-  --accent: #2563eb;
-  /* Cobalt Blue - Professional yet striking */
+  --accent: #2563eb; /* Cobalt Blue - Professional yet striking */
   --accent-glow: rgba(37, 99, 235, 0.5);
   --border-color: #27272a;
-
+  
   /* Typography */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'SF Pro Display', system-ui, -apple-system, sans-serif;
-
+  
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 8rem;
-
+  
   /* Effects */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
@@ -42,12 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.02em;

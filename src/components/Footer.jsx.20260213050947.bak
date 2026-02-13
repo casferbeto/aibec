@@ -15,7 +15,7 @@ const Footer = () => {
                     <a href="#" className="social-link"><Github size={20} /></a>
                     <a href="#" className="social-link"><Twitter size={20} /></a>
                     <a href="#" className="social-link"><Linkedin size={20} /></a>
-                    <a href="mailto:atencion@aibec.com.mx" className="social-link"><Mail size={20} /></a>
+                    <a href="mailto:hola@aibec.mx" className="social-link"><Mail size={20} /></a>
                 </div>
                 <div className="footer-copyright">
                     &copy; {new Date().getFullYear()} Aibec. Todos los derechos reservados.

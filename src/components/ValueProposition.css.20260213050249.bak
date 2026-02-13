@@ -1,5 +1,5 @@
 .value-proposition {
-    background: #000000;
+    background: radial-gradient(circle at center, #0a0c14 0%, #000000 100%);
     padding: 6rem 2rem;
     text-align: center;
     color: white;
