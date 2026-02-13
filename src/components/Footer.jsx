@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className="footer-links">
                     <a href="#" className="social-link"><Github size={20} /></a>
                     <a href="https://www.facebook.com/profile.php?id=61588237284667" target="_blank" rel="noopener noreferrer" className="social-link"><Facebook size={20} /></a>
-                    <a href="https://www.facebook.com/profile.php?id=61588237284667" target="_blank" rel="noopener noreferrer" className="social-link"><Instagram size={20} /></a>
+                    <a href="https://www.instagram.com/aibec_oficial/" target="_blank" rel="noopener noreferrer" className="social-link"><Instagram size={20} /></a>
                     <a href="mailto:atencion@aibec.com.mx" className="social-link"><Mail size={20} /></a>
                 </div>
                 <div className="footer-copyright">
