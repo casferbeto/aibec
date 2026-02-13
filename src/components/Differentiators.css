@@ -1,0 +1,40 @@
+.differentiators-section {
+    padding: 4rem 0;
+}
+
+.differentiators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.diff-card {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.diff-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.diff-icon {
+    color: var(--accent);
+    min-width: 24px;
+}
+
+.highlight-text {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    text-align: center;
+}

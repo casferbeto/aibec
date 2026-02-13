@@ -2,6 +2,8 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ValueProposition from '../components/ValueProposition';
 import TargetProfiles from '../components/TargetProfiles';
+import Differentiators from '../components/Differentiators';
+import Strategy from '../components/Strategy';
 import Services from '../components/Services';
 
 const Home = () => {
@@ -9,8 +11,10 @@ const Home = () => {
         <div className="home-page">
             <Hero />
             <ValueProposition />
-            <TargetProfiles />
+            <Differentiators />
+            <Strategy />
             <Services />
+            <TargetProfiles />
         </div>
     );
 };
