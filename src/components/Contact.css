@@ -104,3 +104,11 @@ textarea:focus {
         padding: 2rem;
     }
 }
+
+.char-count {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-top: -0.25rem;
+    opacity: 0.8;
+}

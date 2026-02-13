@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import './ImageCarousel.css';
 
-import img1 from '../assets/images/servicios/conexion global.png';
-import img2 from '../assets/images/servicios/automatiza y avanza.png';
-import img3 from '../assets/images/servicios/de local a global.png';
-import img4 from '../assets/images/servicios/talento sin fronteras.png';
-import img5 from '../assets/images/servicios/crecimiento inteligente.png';
-import img6 from '../assets/images/servicios/talento digitalizado.png';
+import img1 from '../assets/images/servicios/optimized/conexion global.webp';
+import img2 from '../assets/images/servicios/optimized/automatiza y avanza.webp';
+import img3 from '../assets/images/servicios/optimized/de local a global.webp';
+import img4 from '../assets/images/servicios/optimized/talento sin fronteras.webp';
+import img5 from '../assets/images/servicios/optimized/crecimiento inteligente.webp';
+import img6 from '../assets/images/servicios/optimized/talento digitalizado.webp';
 
 const carouselImages = [
     { src: img1, alt: 'Conexión Global. Alcance Ilimitado.' },

@@ -115,7 +115,11 @@ const Contact = () => {
                             required
                             placeholder="Cuéntame sobre tu proyecto..."
                             rows="5"
+                            maxLength="500"
                         ></textarea>
+                        <div className="char-count">
+                            {formData.message.length} / 500
+                        </div>
                     </div>
 
                     {status.message && (
