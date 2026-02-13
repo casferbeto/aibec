@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Code, ShoppingCart, Cpu, ArrowRight, X, Check } from 'lucide-react';
 import './Services.css';
+import ImageCarousel from './ImageCarousel';
 
 const services = [
     {
@@ -91,6 +92,8 @@ const Services = () => {
                     ))}
                 </div>
             </div>
+
+            <ImageCarousel />
 
             <AnimatePresence>
                 {selectedService && (
