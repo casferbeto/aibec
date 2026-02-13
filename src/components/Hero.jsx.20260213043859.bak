@@ -114,6 +114,9 @@ const Hero = () => {
                     <Button variant="primary" to="/services">
                         Explorar Servicios
                     </Button>
+                    <Button variant="secondary" to="/portfolio">
+                        Ver Portafolio
+                    </Button>
                 </motion.div>
             </div>
 
